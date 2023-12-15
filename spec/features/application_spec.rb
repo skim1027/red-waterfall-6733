@@ -19,7 +19,10 @@ RSpec.describe '/' do
 
         expect(current_path).to eq(search_path)
 
-        
+        expect(page).to have_content('Name')
+        expect(page).to have_content('Allies')
+        expect(page).to have_content('Enemies')
+        expect(page).to have_content('Affiliations')
       end
     end
   end

@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
   def index
     nation = params[:nation].titleize
+    @nation = nation.gsub('+', ' ')
     conn = Faraday.new(url: 'https://last-airbender-api.fly.dev')
 
     response = conn.get("api/v1/characters?affiliation=#{nation}&perPage=all")
@@ -10,6 +11,5 @@ class SearchController < ApplicationController
     @characters = json.map do |character_into|
       Character.new(character_into)
     end
-    require 'pry'; binding.pry
   end
 end
