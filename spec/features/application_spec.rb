@@ -17,7 +17,9 @@ RSpec.describe '/' do
         select('Fire Nation', from: 'nation')
         click_button('Search For Members')
 
-        expect(current_path).to eq('/search')
+        expect(current_path).to eq(search_path)
+
+        
       end
     end
   end
