@@ -19,10 +19,10 @@ RSpec.describe '/' do
 
         expect(current_path).to eq(search_path)
 
-        expect(page).to have_content('Name')
-        expect(page).to have_content('Allies')
-        expect(page).to have_content('Enemies')
-        expect(page).to have_content('Affiliations')
+        expect(page).to have_content('Name: Azula')
+        expect(page).to have_content('Allies: Ozai, Zuko')
+        expect(page).to have_content('Enemies: Iroh, Zuko, Kuei, Long Feng, Mai, Ty Lee, Ursa')
+        expect(page).to have_content("Affiliations: Azula's team (formerly) Dai Li (formerly) Fire Nation Fire Nation Royal Family Fire Warriors Royal Fire Academy for Girls (formerly)")
       end
     end
   end
