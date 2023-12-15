@@ -12,7 +12,7 @@ RSpec.describe '/' do
       end
 
 
-      it 'shows the number of people who live in the fire nation and detailed info for first 25 members' do
+      it 'shows the number of people who live in the fire nation and detailed info for first 25 members', :vcr do
         visit '/'
         select('Fire Nation', from: 'nation')
         click_button('Search For Members')

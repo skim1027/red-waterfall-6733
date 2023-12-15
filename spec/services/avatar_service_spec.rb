@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe AvatarService do
   describe 'nation_members' do
-    it 'returns nation characters' do
+    it 'returns nation characters', :vcr do
       fire_nation = AvatarService.new.nation_members('Fire+Nation')
 
       expect(fire_nation).to be_a Array
