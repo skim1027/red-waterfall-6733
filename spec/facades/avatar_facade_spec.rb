@@ -7,6 +7,7 @@ describe AvatarFacade do
 
       expect(fire_nation.count).to eq(97)
       expect(fire_nation.first.name).to eq('Azula')
+      expect(fire_nation.last.name).to eq("Yon Rha's mother")
     end
   end
 end
