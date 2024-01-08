@@ -1,16 +1,20 @@
 <h2><%= @nation %> Info</h2>
-
-<% @characters.each do |character| %>
-  <p>____________________________________________________________________</p>
-  <p><b>Name: </b><%= character.name %></p> 
-  <p><b>Image: </b>
-  <% if character.photoUrl != nil %>
-    <img src="<%= character.photoUrl %>">
-  <% else %>
-    <b>No Image</b>
+<h2>Population: <%= @characters.count %></h2>
+<ol>
+  <% @characters[0..24].each do |character| %>
+    <p>____________________________________________________________________</p>
+    <li>
+      <p><b>Name: </b><%= character.name %></p> 
+      <p><b>Image: </b>
+        <% if character.photoUrl != nil %>
+          <img src="<%= character.photoUrl %>">
+        <% else %>
+          <b>No Image</b>
+        <% end %>
+        </p>
+      <p><b>Allies: </b><%= character.allies %></p>
+      <p><b>Enemies: </b><%= character.enemies %></p>
+      <p><b>Affiliations: </b><%= character.affiliation %></p>
+    </li>
   <% end %>
-  </p>
-  <p><b>Allies: </b><%= character.allies %></p>
-  <p><b>Enemies: </b><%= character.enemies %></p>
-  <p><b>Affiliations: </b><%= character.affiliation %></p>
-<% end %>
+</ol>
